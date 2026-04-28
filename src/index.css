@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-@plugin "../node_modules/daisyui/index.js";
+@plugin "../node_modules/daisyui/index.js" {
+  themes: "winter", "dracula";
+}
 
 @utility align-element {
   @apply mx-auto max-w-6xl px-8;

@@ -15,7 +15,12 @@ const NavLinks = () => {
         const { id, url, text } = link;
         return (
           <li key={id}>
-            <NavLink className="capitalize" to={url}>
+            <NavLink
+              className={({ isActive }) =>
+                `capitalize ${isActive ? "menu-active" : ""}`
+              }
+              to={url}
+            >
               {text}
             </NavLink>
           </li>
