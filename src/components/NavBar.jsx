@@ -54,12 +54,7 @@ function NavBar() {
         <div className="navbar-end">
           {/* THEME ICONS */}
           <label className="swap swap-rotate">
-            <input
-              type="checkbox"
-              className="theme-controller"
-              value={`winter`}
-              onChange={handleTheme}
-            />
+            <input type="checkbox" onChange={handleTheme} />
             {/* sun icon */}
             <BsSunFill className="swap-on h-4 w-4" />
 

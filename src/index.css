@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 @plugin "../node_modules/daisyui/index.js" {
-  themes: "winter", "dracula";
+  themes:
+    winter --default,
+    dracula --prefersdark;
 }
 
 @utility align-element {
