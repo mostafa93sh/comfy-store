@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
 @plugin "../node_modules/daisyui/index.js";
+
+@utility align-element {
+  @apply mx-auto max-w-6xl px-8;
+}
