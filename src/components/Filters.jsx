@@ -1,4 +1,59 @@
+import { Form, useLoaderData, Link } from "react-router-dom";
+import FormInput from "./FormInput";
+import FormSelect from "./FormSelect";
+import FormRange from "./FormRange";
+import FormCheckbox from "./FormCheckbox";
+
 function Filters() {
-  return <div>Filters</div>;
+  const { meta } = useLoaderData();
+  return (
+    <Form className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-x-4 gap-y-8 bg-base-200 rounded-md px-5 py-4">
+      {/* SEARCH */}
+      <FormInput
+        type="search"
+        label="search product"
+        name="search"
+        size="input-sm"
+      />
+      {/* CATEGORIES */}
+      <FormSelect
+        label="select category"
+        name="category"
+        list={meta.categories}
+        size="select-sm"
+      />
+      {/* COMPANIES */}
+      <FormSelect
+        label="select company"
+        name="company"
+        list={meta.companies}
+        size="select-sm"
+      />
+      {/* ORDER */}
+      <FormSelect
+        label="sort by"
+        name="order"
+        list={["a-z", "z-a", "high", "low"]}
+        size="select-sm"
+      />
+      {/* PRICE */}
+      <FormRange label="select price" name="price" size="range-sm" />
+      {/* SHIPPING */}
+      <FormCheckbox label="free shipping" name="shipping" size="checkbox-sm" />
+      {/* BUTTONS */}
+      <button
+        type="submit"
+        className="btn btn-primary btn-sm text-primary-content"
+      >
+        search
+      </button>
+      <Link
+        to="/products"
+        className="btn btn-accent btn-sm text-accent-content"
+      >
+        reset
+      </Link>
+    </Form>
+  );
 }
 export default Filters;
