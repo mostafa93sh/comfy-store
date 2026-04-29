@@ -52,15 +52,6 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "register",
-        element: <Register />,
-        action: registerAction,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
         path: "checkout",
         element: <Checkout />,
       },
