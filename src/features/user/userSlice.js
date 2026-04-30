@@ -13,7 +13,7 @@ const getThemeFromLocalStorage = () => {
 };
 
 const initialState = {
-  user: { username: "coding addict" },
+  user: null,
   theme: getThemeFromLocalStorage(),
 };
 const userSlice = createSlice({
