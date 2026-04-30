@@ -6,3 +6,4 @@ export { default as PaginationContainer } from "./PaginationContainer";
 export { default as CartItemList } from "./CartItemList";
 export { default as CartTotals } from "./CartTotals";
 export { default as SectionTitle } from "./SectionTitle";
+export { default as CheckoutForm } from "./CheckoutForm";

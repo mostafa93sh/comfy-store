@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 export const loader = (store) => async () => {
   const user = store.getState().userState.user;
-
+  console.log(user);
   if (!user) {
     toast.warn("You must be logged in to checkout");
     return redirect("/login");
@@ -14,8 +14,8 @@ export const loader = (store) => async () => {
 };
 
 const Checkout = () => {
-  const cartTotal = useSelector((state) => state.cartState.cartTotal);
-  if (cartTotal.length === 0) {
+  const cartItems = useSelector((state) => state.cartState.cartItems);
+  if (cartItems.length === 0) {
     return <SectionTitle text="Your cart is empty" />;
   }
   return (
