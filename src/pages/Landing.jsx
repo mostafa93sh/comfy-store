@@ -9,8 +9,7 @@ const featuredProductsQuery = {
 };
 
 export const loader = (queryClient) => async () => {
-  const response = await customFetch(url);
-  console.log(response);
+  const response = await queryClient.ensureQueryData(featuredProductsQuery);
   const products = response.data.data;
   return { products };
 };
