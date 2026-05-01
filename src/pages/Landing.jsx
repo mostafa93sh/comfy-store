@@ -7,7 +7,7 @@ const featuredProductsQuery = {
   queryKey: ["featuredProducts"],
   queryFn: () => customFetch(url),
 };
-
+/* eslint-disable react-refresh/only-export-components */
 export const loader = (queryClient) => async () => {
   const response = await queryClient.ensureQueryData(featuredProductsQuery);
   const products = response.data.data;
