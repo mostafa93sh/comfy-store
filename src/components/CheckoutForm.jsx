@@ -4,7 +4,7 @@ import SubmitBtn from "./SubmitBtn";
 import { customFetch, formatPrice } from "../utils";
 import { toast } from "react-toastify";
 import { clearCart } from "../features/cart/cartSlice";
-
+/* eslint-disable react-refresh/only-export-components */
 export const action =
   (store, queryClient) =>
   async ({ request }) => {
@@ -32,6 +32,7 @@ export const action =
           },
         },
       );
+      queryClient.removeQueries(["orders"]);
       store.dispatch(clearCart());
       toast.success("order placed successfully");
       return redirect("/orders");
